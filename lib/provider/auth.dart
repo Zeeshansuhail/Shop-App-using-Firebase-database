@@ -86,8 +86,8 @@ class Authication with ChangeNotifier {
       _authTimer = null;
     }
     notifyListeners();
-    // final pref = await SharedPreferences.getInstance();
-    // pref.clear();
+     final pref = await SharedPreferences.getInstance();
+     pref.clear();
   }
 
   Future<bool> autologin() async {
@@ -107,6 +107,7 @@ class Authication with ChangeNotifier {
     _expiredatetime = exptiredata;
     notifyListeners();
     autoLogout();
+    return true;
   }
 
   void autoLogout() {
